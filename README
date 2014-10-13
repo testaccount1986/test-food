@@ -1,0 +1,12 @@
+Before you install:
+1. Make sure you have Virtual Box installed [https://www.virtualbox.org/wiki/Downloads]
+2. Make sure you have Vagrant installed [http://www.vagrantup.com/downloads.html]
+
+How to install
+1. Download the copy of repository from https://github.com/testaccount1986/test-food.git 
+git clone https://github.com/testaccount1986/test-food.git
+2. Go to test-food folder and run:
+cd test-food && vagrant up
+3. Add test.dev to you /etc/hosts file:
+sudo echo '192.168.56.101  test.dev' | sudo tee -a /etc/hosts
+4. Open up your browser and go to test.dev then have fun
