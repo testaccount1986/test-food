@@ -1,0 +1,3 @@
+v1_recipe_homepage:
+    path:     /list
+    defaults: { _controller: V1RecipeBundle:Default:list }
