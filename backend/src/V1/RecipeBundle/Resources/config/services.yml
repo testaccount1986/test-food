@@ -1,0 +1,4 @@
+services:
+#    v1_recipe.example:
+#        class: V1\RecipeBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
