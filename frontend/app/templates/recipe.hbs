@@ -1,0 +1,30 @@
+<h1>With {{total}}  recipes, you're sure to find the perfect dish. </h1>
+<div class="form-group">
+    {{input class="form-control" type='text' value=filter placeholder='Name, Ingredient or Cooking Time'}}
+</div>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Cooking Time</th>
+            <th>Main Ingredients</th>
+            <th></th>
+        </tr>
+    </thead>
+    {{#each recipeContent}}
+    <tr>
+        <td> {{_view.contentIndex}} </td>
+        <td> {{ name }} </td>
+        <td> {{ cookingTime }} </td>
+        <td>
+            {{#each ingredients}}
+            {{this}},
+            {{/each}}
+        </td>
+        <td>
+             <button class="btn btn-primary" {{action 'view' this }}>View</button>
+        </td>
+    </tr>
+    {{/each}}
+</table>
