@@ -1,4 +1,4 @@
-<h1>With {{total}}  recipes, you're sure to find the perfect dish. </h1>
+<h1>With {{xx}}  recipes, you're sure to find the perfect dish. </h1>
 <div class="panel panel-default">
     <div class="panel-heading">Recipe
          <button class="btn btn-primary btn-xs" {{action list}}>Recipe List</button>
@@ -12,7 +12,8 @@
             <label>Cooking Time: </label> {{cookingTime}}
             </li>
             <li class="list-group-item">
-            <label>Main Ingredients: </label>{{#each ingredients}}
+            <label>Main Ingredients: </label>
+            {{#each ingredients}}
             {{this}}
             {{/each}}
             </li>
