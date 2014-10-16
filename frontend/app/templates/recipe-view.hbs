@@ -1,0 +1,22 @@
+<h1>With {{xx}}  recipes, you're sure to find the perfect dish. </h1>
+<div class="panel panel-default">
+    <div class="panel-heading">Recipe
+         <button class="btn btn-primary btn-xs" {{action list}}>Recipe List</button>
+    </div>
+    <div class="panel-body">
+        <ul class="list-group">
+            <li class="list-group-item">
+            <label>Name: </label> {{name}}
+            </li>
+            <li class="list-group-item">
+            <label>Cooking Time: </label> {{cookingTime}}
+            </li>
+            <li class="list-group-item">
+            <label>Main Ingredients: </label>
+            {{#each ingredients}}
+            {{this}}
+            {{/each}}
+            </li>
+        </ul>
+    </div>
+</div>
