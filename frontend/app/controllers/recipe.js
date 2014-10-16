@@ -10,24 +10,28 @@ export default Ember.ArrayController.extend({
     }.property('recipeContent'),
     test: Ember.computed(
         function() {
-            return this.get('filter');
-        }
+        return this.get('filter');
+    }
     ),
     filteredContent: function(){
         var filter = this.get('filter');
         var rx = new RegExp(filter, 'gi');
-        var self = this;
-        this.recipeContent = this.model.filter(function(recipe) {
+        return this.model.filter(function(recipe) {
             if (recipe.get('name').match(rx)) {
                 return true;
             }
             if (recipe.get('cookingTime').match(rx)) {
                 return true;
             }
+            var ingredients = recipe.get('ingredients');
+            for(var i=0; i<ingredients.length;i++) {
+                if (ingredients[i].match(rx)) {
+                    return true;
+                }
+            }
             return false;
         });
-        this.total = this.recipeContent;
-    }.observes('filter'),
+    }.property('filteredContent', 'filter'),
     actions: {
         view: function(recipe) {
             this.transitionTo('recipeView', recipe.get('id'));
